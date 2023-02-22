@@ -1,5 +1,6 @@
-package cn.geterror.serialization.mybatis;
+package cn.geterror.serialization.mybatis.type.handler;
 
+import cn.geterror.serialization.mybatis.DataBaseSerializable;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedTypes;

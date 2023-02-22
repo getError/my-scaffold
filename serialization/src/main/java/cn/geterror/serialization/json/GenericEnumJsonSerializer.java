@@ -1,4 +1,4 @@
-package cn.geterror.serialization.mybatis;
+package cn.geterror.serialization.json;
 
 import cn.geterror.serialization.enums.IdEnum;
 import com.fasterxml.jackson.core.JsonGenerator;

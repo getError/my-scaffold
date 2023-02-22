@@ -1,24 +1,18 @@
-package com.sankuai.blue.feature.common.util;
-
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.sankuai.blue.infra.exception.BusinessException;
+package cn.geterror.serialization.json;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
 
 public class JsonUtils {
-
-    private final static Logger logger = LoggerFactory.getLogger(JsonUtils.class);
 
     private final static ObjectMapper mapper = new ObjectMapper();
 
@@ -57,7 +51,6 @@ public class JsonUtils {
             }
             return mapper.writeValueAsString(obj);
         } catch (JsonProcessingException e) {
-            logger.error(e.getMessage(), e);
             return defaultStrIfNull;
         }
     }
@@ -74,7 +67,6 @@ public class JsonUtils {
         try {
             return mapper.readValue(jsonStr, cls);
         } catch (IOException e) {
-            logger.error(e.getMessage(), e);
             return defaultValue;
         }
     }
@@ -87,8 +79,7 @@ public class JsonUtils {
         try {
             return mapper.readValue(jsonStr, LinkedHashMap.class);
         } catch (IOException e) {
-//            logger.error(e.getMessage(), e);
-            throw new BusinessException("json转换map异常, json=%s", jsonStr, e);
+            throw new RuntimeException(String.format("json转换map异常, json=%s", jsonStr), e);
         }
     }
 
@@ -96,7 +87,6 @@ public class JsonUtils {
         try {
             return mapper.readTree(jsonStr);
         } catch (IOException e) {
-            logger.error(e.getMessage(), e);
             return null;
         }
     }
@@ -120,7 +110,6 @@ public class JsonUtils {
         try {
             return mapper.readValue(jsonString, typeReference);
         } catch (Exception e) {
-            logger.error(e.getMessage(), e);
             return null;
         }
     }

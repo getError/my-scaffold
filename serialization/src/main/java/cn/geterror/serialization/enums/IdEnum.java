@@ -1,4 +1,4 @@
-package com.sankuai.blue.infra.enums;
+package cn.geterror.serialization.enums;
 
 import java.util.EnumSet;
 import java.util.List;

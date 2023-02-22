@@ -1,4 +1,4 @@
-package cn.geterror.serialization.mybatis;
+package cn.geterror.serialization.mybatis.type.handler;
 
 import cn.geterror.serialization.enums.IdEnum;
 import org.apache.ibatis.type.BaseTypeHandler;

@@ -1,4 +1,4 @@
-package com.sankuai.blue.infra.annotation;
+package cn.geterror.base.annotation;
 
 import java.lang.annotation.*;
 

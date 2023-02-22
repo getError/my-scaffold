@@ -1,7 +1,6 @@
-package com.sankuai.blue.infra.serialize;
+package cn.geterror.serialization.mybatis;
 
-
-import com.sankuai.blue.feature.common.util.JsonUtils;
+import cn.geterror.serialization.json.JsonUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;

@@ -1,8 +1,8 @@
-package com.sankuai.blue.infra.web;
+package cn.geterror.base.controller;
 
+import cn.geterror.base.annotation.RawResult;
+import cn.geterror.base.annotation.ResultCode;
 import com.google.common.reflect.TypeToken;
-import com.sankuai.blue.infra.annotation.RawResult;
-import com.sankuai.blue.infra.annotation.ResultCode;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;

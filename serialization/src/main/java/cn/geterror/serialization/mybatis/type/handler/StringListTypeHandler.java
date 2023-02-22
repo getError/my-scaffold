@@ -1,5 +1,6 @@
-package cn.geterror.serialization.mybatis;
+package cn.geterror.serialization.mybatis.type.handler;
 
+import cn.geterror.serialization.mybatis.StringListEncode;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 

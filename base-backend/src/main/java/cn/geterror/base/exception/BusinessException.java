@@ -1,4 +1,4 @@
-package com.sankuai.blue.infra.exception;
+package cn.geterror.base.exception;
 
 /**
  * 用于业务参数或者数据上的错误

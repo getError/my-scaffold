@@ -1,9 +1,7 @@
-package com.sankuai.blue.infra.web;
+package cn.geterror.base.controller;
 
-import com.dianping.cat.Cat;
-import com.meituan.mtrace.Tracer;
-import com.sankuai.blue.infra.exception.BusinessException;
-import com.sankuai.blue.infra.exception.ContentBusinessException;
+import cn.geterror.base.exception.BusinessException;
+import cn.geterror.base.exception.ContentBusinessException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
@@ -27,21 +25,18 @@ public class GlobalExceptionHandler {
     public JsonResult contentBusinessException(ContentBusinessException e) {
 
         logger.error("ContentBusinessException: " + e.getBody(), e);
-        Cat.logError("ContentBusinessException: " + e.getBody() + ", message: " + e.getMessage(), e);
         return new JsonResult(e.getErrorCode(), e.getErrorMsg(), e.getBody());
     }
 
     @ExceptionHandler(value = BusinessException.class)
     public JsonResult businessExceptionHandler(BusinessException e) {
         logger.error("BusinessException: ", e);
-        Cat.logError(e.getMessage(), e);
         return new JsonResult(e.getErrorCode(), e.getErrorMsg(), null);
     }
 
     @ExceptionHandler(value = {IllegalArgumentException.class})
     public JsonResult illegalArgumentExceptionHandler(Exception e) {
         logger.error("IllegalArgumentException: ", e);
-        Cat.logEvent("非法参数异常", e.getMessage());
         return new JsonResult(-2, e.getMessage(), null);
     }
 
@@ -49,7 +44,6 @@ public class GlobalExceptionHandler {
     public JsonResult maxUploadSizeExceededExceptionHandler(MaxUploadSizeExceededException e) {
 
         logger.error("MaxUploadSizeExceededException: ", e);
-        Cat.logError(e.getMessage(), e);
 
         String message = "上传文件过大";
         if (e.getMaxUploadSize() > 0) {
@@ -76,11 +70,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = Exception.class)
     public JsonResult exceptionHandler(Exception e) {
         logger.error("Exception: ", e);
-        Cat.logError(e.getMessage(), e);
 
-        String traceId = Tracer.id();
-        String traceTail = !StringUtils.isEmpty(traceId) ? ", traceId: " + traceId : "";
-
-        return new JsonResult(-1, "系统异常" + traceTail, null);
+        return new JsonResult(-1, "系统异常:"+e, null);
     }
 }

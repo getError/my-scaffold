@@ -1,2 +1,12 @@
-package cn.geterror.base;public class WebApp {
+package cn.geterror.base;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class WebApp {
+    public static void main(String[] args) {
+        SpringApplication.run(WebApp.class);
+    }
 }

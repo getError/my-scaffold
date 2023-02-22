@@ -1,5 +1,6 @@
-package cn.geterror.serialization.mybatis;
+package cn.geterror.serialization.json;
 
+import cn.geterror.serialization.enums.IdEnum;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -7,8 +8,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.databind.deser.BeanDeserializerFactory;
 import com.fasterxml.jackson.databind.deser.ContextualDeserializer;
-import com.sankuai.blue.feature.view.SceneVisualizationView;
-import com.sankuai.blue.infra.enums.IdEnum;
 
 import java.io.IOException;
 import java.math.RoundingMode;
@@ -19,34 +18,6 @@ import java.util.stream.Collectors;
 
 public class JacksonSerializeStrategy {
 
-    public static class CepJsonKVs extends JsonDeserializer<List<SceneVisualizationView.JsonKV>> {
-        @Override
-        public List<SceneVisualizationView.JsonKV> deserialize(JsonParser jp, DeserializationContext ctx) throws IOException, JsonProcessingException {
-            List<SceneVisualizationView.JsonKV> kvs = ctx.readValue(jp, ctx.getTypeFactory().constructType(new TypeReference<List<SceneVisualizationView.JsonKV>>(){}));
-            return kvs.stream().map(kv->kv.toSubclass()).collect(Collectors.toList());
-
-        }
-    }
-
-    public static class CepJsonKV extends JsonDeserializer<SceneVisualizationView.JsonKV> {
-        @Override
-        public SceneVisualizationView.JsonKV deserialize(JsonParser jp, DeserializationContext ctx) throws IOException, JsonProcessingException {
-            SceneVisualizationView.JsonKV kv = ctx.readValue(jp, SceneVisualizationView.JsonKV.class);
-
-            SceneVisualizationView.KVType kvType = kv.getType();
-            switch (kvType){
-                case VAR:
-                    return ctx.readValue(jp, SceneVisualizationView.VarKV.class);
-                case DICT:
-                    return ctx.readValue(jp, SceneVisualizationView.DictKV.class);
-                case ARR:
-                    return ctx.readValue(jp, SceneVisualizationView.ArrKV.class);
-                case CUS:
-                    return ctx.readValue(jp, SceneVisualizationView.CusKV.class);
-            }
-            return null;
-        }
-    }
 
     public static class EmptyList extends JsonSerializer<Object>{
 

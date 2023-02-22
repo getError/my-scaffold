@@ -1,4 +1,4 @@
-package com.sankuai.blue.infra.exception;
+package cn.geterror.base.exception;
 
 import lombok.Getter;
 

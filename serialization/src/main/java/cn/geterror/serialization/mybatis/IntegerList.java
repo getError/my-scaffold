@@ -1,4 +1,4 @@
-package com.sankuai.blue.infra.serialize;
+package cn.geterror.serialization.mybatis;
 
 
 import lombok.NoArgsConstructor;

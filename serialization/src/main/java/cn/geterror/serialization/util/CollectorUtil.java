@@ -1,8 +1,11 @@
-package com.sankuai.blue.feature.util;
+package cn.geterror.serialization.util;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.function.*;
+import java.util.function.BiPredicate;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class CollectorUtil {

@@ -1,8 +1,7 @@
-package com.sankuai.blue.infra.util;
+package cn.geterror.serialization.mybatis;
 
+import cn.geterror.serialization.json.JsonUtils;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.sankuai.blue.feature.common.util.JsonUtils;
-import com.sankuai.blue.infra.exception.InternalException;
 import org.apache.commons.text.translate.*;
 import org.springframework.util.StringUtils;
 
@@ -54,7 +53,7 @@ public abstract class StringListEncode {
         for (String item : value) {
 
             if (item == null) {
-                throw new InternalException("Can't escape null String in List<String>.");
+                throw new RuntimeException("Can't escape null String in List<String>.");
             }
 
             if (sb.length() > 0) {
@@ -87,7 +86,7 @@ public abstract class StringListEncode {
             try {
                 return JsonUtils.getMapper().readValue(value, STRING_LIST_TYPE);
             } catch (IOException e) {
-                throw new InternalException("Error while decode json List<String>: " + value, e);
+                throw new RuntimeException("Error while decode json List<String>: " + value, e);
             }
         }
 
@@ -128,7 +127,7 @@ public abstract class StringListEncode {
                 }
             }
         } catch (IOException e) {
-            throw new InternalException("Error while decode encoded List<String>: " + value, e);
+            throw new RuntimeException("Error while decode encoded List<String>: " + value, e);
         }
 
         result.add(writer.toString());

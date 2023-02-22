@@ -1,6 +1,5 @@
-package com.sankuai.blue.feature.common.base;
+package cn.geterror.base.controller;
 
-import com.sankuai.blue.infra.web.JsonResult;
 import org.springframework.http.HttpStatus;
 
 import java.util.Collections;
@@ -8,9 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
-import static org.springframework.http.HttpStatus.NOT_FOUND;
-import static org.springframework.http.HttpStatus.UNAUTHORIZED;
+import static org.springframework.http.HttpStatus.*;
 
 public interface IJsonResult {
 

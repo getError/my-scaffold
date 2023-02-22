@@ -1,6 +1,7 @@
-package cn.geterror.serialization.mybatis;
+package cn.geterror.serialization.mybatis.type.handler;
 
 import cn.geterror.serialization.json.JsonUtils;
+import cn.geterror.serialization.mybatis.DataBaseSerializable;
 import com.fasterxml.jackson.core.type.TypeReference;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
