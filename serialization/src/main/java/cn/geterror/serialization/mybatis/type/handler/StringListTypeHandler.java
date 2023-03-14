@@ -3,6 +3,8 @@ package cn.geterror.serialization.mybatis.type.handler;
 import cn.geterror.serialization.mybatis.StringListEncode;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
+import org.apache.ibatis.type.MappedJdbcTypes;
+import org.apache.ibatis.type.MappedTypes;
 
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
@@ -19,8 +21,9 @@ import java.util.List;
  *  3. 元素之间用 ',' 分割
  *  4. 当最后的元素为空字符串，增加 ',' 后缀用于区分
  *
- * @author hanyecong02
  */
+@MappedTypes(List.class)
+@MappedJdbcTypes(JdbcType.VARCHAR)
 public class StringListTypeHandler extends BaseTypeHandler<List<String>> {
 
     @Override

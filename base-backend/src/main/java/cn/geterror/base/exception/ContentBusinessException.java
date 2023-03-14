@@ -2,9 +2,6 @@ package cn.geterror.base.exception;
 
 import lombok.Getter;
 
-/**
- * @author hanyecong02
- */
 public class ContentBusinessException extends BusinessException {
 
     @Getter

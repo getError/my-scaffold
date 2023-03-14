@@ -2,7 +2,6 @@ package cn.geterror.base.exception;
 
 /**
  * 用于业务参数或者数据上的错误
- * @author zhanghongyu
  */
 public class BusinessException extends RuntimeException {
 

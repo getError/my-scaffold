@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ValueConstants;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
-/**
- * @author hanyecong02
- */
+
 @ControllerAdvice
 @SuppressWarnings("UnstableApiUsage")
 public class JsonResultAdvice implements ResponseBodyAdvice<Object> {
