@@ -2,15 +2,11 @@ package cn.geterror.base.interceptor;
 
 
 import cn.geterror.base.util.BAUtil;
-import com.google.common.net.HttpHeaders;
-import com.sun.tools.internal.ws.wsdl.document.http.HTTPConstants;
 import org.springframework.http.MediaType;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
-import sun.misc.CharacterEncoder;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.nio.charset.Charset;
 
 public class BAInterceptor extends HandlerInterceptorAdapter {
     private final BAUtil baUtil;
