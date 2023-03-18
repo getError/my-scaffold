@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/base-backend/base-backend.iml" filepath="$PROJECT_DIR$/base-backend/base-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/my-scaffold.iml" filepath="$PROJECT_DIR$/.idea/my-scaffold.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serialization/serialization.iml" filepath="$PROJECT_DIR$/serialization/serialization.iml" />
+    </modules>
+  </component>
+</project>
