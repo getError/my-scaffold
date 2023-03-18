@@ -24,6 +24,8 @@ public class BAInterceptor extends HandlerInterceptorAdapter {
         String date = request.getHeader("Date");
         if(authorization==null||date==null){
             response.setStatus(401);
+            response.setContentType(MediaType.TEXT_PLAIN_VALUE);
+            response.setCharacterEncoding("UTF-8");
             response.getWriter().print("请补全Authorization和Date两个headers字段");
             return false;
         }
