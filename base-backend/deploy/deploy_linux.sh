@@ -7,5 +7,5 @@ if ! command -v java > /dev/null 2>&1; then
   exit
 fi
 
-mvn package -f ../../pom.xml
-java -jar ../../target/base-backend-1.0-SNAPSHOT.jar
+mvn package -f ../src/pom.xml
+java -jar ../target/base-backend-1.0-SNAPSHOT.jar
